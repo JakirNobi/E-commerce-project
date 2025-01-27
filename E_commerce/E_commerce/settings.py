@@ -25,7 +25,17 @@ SECRET_KEY = 'django-insecure-(g@b6q3fg*ua3!@%dw9reb$w^wxyw6983aiho_v3=mj+@+c#te
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] 
+
+# Origin trust issue resolve
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://e-commerce-project-4jos.onrender.com',
+    'https://staging-e-commerce-project.onrender.com',
+    'http://0.0.0.0',
+    'http://localhost',
+]
+
 
 
 # Application definition
