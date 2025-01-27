@@ -1,0 +1,818 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block title %}
+  Stuffs Deal-eCommerce Platform
+{% endblock title %}
+
+{% block content %}
+
+<!-- <section class="py-3" style="background-image: url('images/Hero_Background.png');background-repeat: no-repeat;background-size: cover;"> -->
+  <section class="py-3" style="background-repeat: no-repeat;background-size: cover;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner-blocks">
+            <div class="banner-ad large bg-info block-1">
+              <div class="swiper main-swiper">
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                    <div class="row banner-content p-5">
+                      <div class="content-wrapper col-md-5">
+                        <h3 class="display-4">A9 Pro ANC Touch Screen Display Earbuds</h3>
+                        <p>
+                          Model: A9 Pro <br>
+                          Active Noise Cancellation (ANC) <br>
+                          Transparency Mode <br>
+                          Comfortable Fit <br>
+                          Total Pay time: Up to 30 hours
+                          Charging Dock Battery Capacity: 300mAh with protection board (3C fast charging battery),
+                          Headphone Battery: 30mAh + 30mAh
+                          Charging time: 2 Hours
+                        </p>
+                        <a href="#"
+                          class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">Shop Now</a>
+                      </div>
+                      <div class="img-wrapper col-md-7">
+                        <img src="{% static 'base/images/products/product-thumb-7.png' %}" class="img-fluid">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="row banner-content p-5">
+                      <div class="content-wrapper col-md-5">
+                        <h3 class="display-4">Unique Bicycle Vintage Flip Clock</h3>
+                        <p>
+                          <br>
+                          Model: MidClock HY-F117 <br>
+                          Material: ABS + Metal <br>
+                          Size: Approx. 20 x 7.3 x 12cm<br>
+                          Battery: 1.5v AA Battery <br>
+                          7 days replacement warranty <br>
+                          <br>
+                          <br>
+                          The MidClock HY-F117 Unique Bicycle Vintage Flip Desk Clock is now available in Bangladesh. 
+                        </p>
+                        <a href="#"
+                          class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">Shop Now</a>
+                      </div>
+                      <div class="img-wrapper col-md-7">
+                        <img src="{% static 'base/images/products/product-thumb-2.png' %}" class="img-fluid">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="row banner-content p-5">
+                      <div class="content-wrapper col-md-5">
+                        <h3 class="display-4">Kieslect KR2 Smart Watch</h3>
+                        <p>
+                          <br>
+                          Model: KR2 <br>
+                          1.43″ FHD AMOLED Display with AOD <br>
+                          Material: Metal Body <br>
+                          Dual Core, Triple Speed <br>
+                          Advanced Biometric Sensor <br>
+                          Bangla Front Support <br>
+                          366 Days warranty <br>
+                          <br>
+                          <br>
+                          Get theKieslect KR2 Bluetooth Calling Smart Watch in Bangladesh at Stuffs Deal.
+                        </p>
+                        <a href="#"
+                          class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">Shop Now</a>
+                      </div>
+                      <div class="img-wrapper col-md-7">
+                        <img src="{% static 'base/images/products/product-thumb-8.png' %}" class="img-fluid">
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+
+            <div class="banner-ad bg-success-subtle block-2"
+              style="background:url('{% static 'base/images/products/product-thumb-5.png' %}') no-repeat;background-position: right top; ">
+              <div class="row banner-content p-5">
+
+                <div class="content-wrapper col-md-7">
+                  <h3 class="banner-title">Wireless Bluetooth <br>Speaker</h3>
+                  <p>
+                    Phillips <br>
+                    6-10 Hours Music Time <br>
+                    Bluetooth 5.3 <br>
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="banner-ad bg-danger block-3" style="background:url('{% static 'base/images/products/product-thumb-2.png' %}') no-repeat; background-position: right top; padding-bottom:100px;">
+              <div class="row banner-content p-5">
+
+                <div class="content-wrapper col-md-7">
+                  <h3 class="item-title">Unique Bicycle Vintage Flip Desk Clock </h3>
+                  <p>
+                    Model:HY-F117 <br>
+                    Material: Metal <br>
+                    Battery: 1.5v AA<br>
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <!-- / Banner Blocks -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<hr>
+<!-- Categories_Section -->
+  <section class="py-5 overflow-hidden">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="section-header d-flex flex-wrap justify-content-between mb-5">
+            <h2 class="section-title">Category</h2>
+
+            <div class="d-flex align-items-center">
+              <a href="#" class="btn-link text-decoration-none">View All Categories →</a>
+              <div class="swiper-buttons">
+                <button class="swiper-prev category-carousel-prev btn btn-yellow">❮</button>
+                <button class="swiper-next category-carousel-next btn btn-yellow">❯</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="category-carousel swiper">
+            <div class="swiper-wrapper">
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon1.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Earbuds</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon2.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Smart watch</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon3.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Mouse</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon4.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Sound Box</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon5.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Router</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon6.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Stand Fan</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon7.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Printer</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon8.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Mic</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon9.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Keybord</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon10.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Head-Phone</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon11.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Gamepad</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon12.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Flashlight</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon13.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">USB</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon14.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">AC</h3>
+              </a>
+              <a href="index.html" class="nav-link category-item swiper-slide">
+                <img src="{% static 'base/images/icons/icon15.png' %}" alt="Category Thumbnail">
+                <h3 class="category-title">Camera</h3>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<hr>
+  <section class="py-5">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="bootstrap-tabs product-tabs">
+            <div class="tabs-header d-flex justify-content-between border-bottom my-5">
+              <h2>Hot Selling</h2>
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a href="#" class="nav-link text-uppercase fs-6 active" id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all">All</a>
+                  <!-- <a href="#" class="nav-link text-uppercase fs-6" id="nav-fruits-tab" data-bs-toggle="tab" data-bs-target="#nav-fruits">In-Stock</a> -->
+                  <!-- <a href="#" class="nav-link text-uppercase fs-6" id="nav-juices-tab" data-bs-toggle="tab" data-bs-target="#nav-juices">Upcomming</a> -->
+                </div>
+              </nav>
+            </div>
+
+            
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
+                <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+                  <!-- Product-1 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">-30%</span>
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-1.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Powerbank</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- Product-2 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">-30%</span>
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-2.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Desk Clock</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- product-3 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-3.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Transparent mouse</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <!-- Product-4 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-4.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Mike & Speaker</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <!-- Product-5 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-5.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Sound Box</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <!-- Product-6 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-6.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Sound box</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <!-- Product-7 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-7.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Airbud</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <!-- Product-8 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="#" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-8.png'%}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Smart Watch</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <!-- Product-9 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-9.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Keyboard</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <!-- product-10 -->
+                  <div class="col">
+                    <div class="product-item">
+                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
+                          <use xlink:href="#heart"></use>
+                        </svg></a>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="{% static 'base/images/products/product-thumb-10.png' %}" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Sound Box</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <span class="price">$18.00</span>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="input-group product-qty">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                              data-type="minus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#minus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                          <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                              data-type="plus">
+                              <svg width="16" height="16">
+                                <use xlink:href="#plus"></use>
+                              </svg>
+                            </button>
+                          </span>
+                        </div>
+                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+                <!-- / product-grid -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="py-5">
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
+        <div class="col">
+          <div class="card mb-3 border-0">
+            <div class="row">
+              <div class="col-md-2 text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M21.5 15a3 3 0 0 0-1.9-2.78l1.87-7a1 1 0 0 0-.18-.87A1 1 0 0 0 20.5 4H6.8l-.33-1.26A1 1 0 0 0 5.5 2h-2v2h1.23l2.48 9.26a1 1 0 0 0 1 .74H18.5a1 1 0 0 1 0 2h-13a1 1 0 0 0 0 2h1.18a3 3 0 1 0 5.64 0h2.36a3 3 0 1 0 5.82 1a2.94 2.94 0 0 0-.4-1.47A3 3 0 0 0 21.5 15Zm-3.91-3H9L7.34 6H19.2ZM9.5 20a1 1 0 1 1 1-1a1 1 0 0 1-1 1Zm8 0a1 1 0 1 1 1-1a1 1 0 0 1-1 1Z" />
+                </svg>
+              </div>
+              <div class="col-md-10">
+                <div class="card-body p-0">
+                  <h5>Free delivery</h5>
+                  <p class="card-text">We deliver product free of cost inside Bangladesh.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3 border-0">
+            <div class="row">
+              <div class="col-md-2 text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M19.63 3.65a1 1 0 0 0-.84-.2a8 8 0 0 1-6.22-1.27a1 1 0 0 0-1.14 0a8 8 0 0 1-6.22 1.27a1 1 0 0 0-.84.2a1 1 0 0 0-.37.78v7.45a9 9 0 0 0 3.77 7.33l3.65 2.6a1 1 0 0 0 1.16 0l3.65-2.6A9 9 0 0 0 20 11.88V4.43a1 1 0 0 0-.37-.78ZM18 11.88a7 7 0 0 1-2.93 5.7L12 19.77l-3.07-2.19A7 7 0 0 1 6 11.88v-6.3a10 10 0 0 0 6-1.39a10 10 0 0 0 6 1.39Zm-4.46-2.29l-2.69 2.7l-.89-.9a1 1 0 0 0-1.42 1.42l1.6 1.6a1 1 0 0 0 1.42 0L15 11a1 1 0 0 0-1.42-1.42Z" />
+                </svg>
+              </div>
+              <div class="col-md-10">
+                <div class="card-body p-0">
+                  <h5>100% secure payment</h5>
+                  <p class="card-text">Our payment system is Cash on Delivery.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3 border-0">
+            <div class="row">
+              <div class="col-md-2 text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M22 5H2a1 1 0 0 0-1 1v4a3 3 0 0 0 2 2.82V22a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-9.18A3 3 0 0 0 23 10V6a1 1 0 0 0-1-1Zm-7 2h2v3a1 1 0 0 1-2 0Zm-4 0h2v3a1 1 0 0 1-2 0ZM7 7h2v3a1 1 0 0 1-2 0Zm-3 4a1 1 0 0 1-1-1V7h2v3a1 1 0 0 1-1 1Zm10 10h-4v-2a2 2 0 0 1 4 0Zm5 0h-3v-2a4 4 0 0 0-8 0v2H5v-8.18a3.17 3.17 0 0 0 1-.6a3 3 0 0 0 4 0a3 3 0 0 0 4 0a3 3 0 0 0 4 0a3.17 3.17 0 0 0 1 .6Zm2-11a1 1 0 0 1-2 0V7h2ZM4.3 3H20a1 1 0 0 0 0-2H4.3a1 1 0 0 0 0 2Z" />
+                </svg>
+              </div>
+              <div class="col-md-10">
+                <div class="card-body p-0">
+                  <h5>Quality guarantee</h5>
+                  <p class="card-text">We ensure our best quality product for user setisfaction.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3 border-0">
+            <div class="row">
+              <div class="col-md-2 text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M12 8.35a3.07 3.07 0 0 0-3.54.53a3 3 0 0 0 0 4.24L11.29 16a1 1 0 0 0 1.42 0l2.83-2.83a3 3 0 0 0 0-4.24A3.07 3.07 0 0 0 12 8.35Zm2.12 3.36L12 13.83l-2.12-2.12a1 1 0 0 1 0-1.42a1 1 0 0 1 1.41 0a1 1 0 0 0 1.42 0a1 1 0 0 1 1.41 0a1 1 0 0 1 0 1.42ZM12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.26 6.33l-2 2a1 1 0 0 0-.21 1.09A1 1 0 0 0 3 22h9a10 10 0 0 0 0-20Zm0 18H5.41l.93-.93a1 1 0 0 0 0-1.41A8 8 0 1 1 12 20Z" />
+                </svg>
+              </div>
+              <div class="col-md-10">
+                <div class="card-body p-0">
+                  <h5>guaranteed savings</h5>
+                  <p class="card-text">By purchesing our quality products you can save money.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3 border-0">
+            <div class="row">
+              <div class="col-md-2 text-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M18 7h-.35A3.45 3.45 0 0 0 18 5.5a3.49 3.49 0 0 0-6-2.44A3.49 3.49 0 0 0 6 5.5A3.45 3.45 0 0 0 6.35 7H6a3 3 0 0 0-3 3v2a1 1 0 0 0 1 1h1v6a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-6h1a1 1 0 0 0 1-1v-2a3 3 0 0 0-3-3Zm-7 13H8a1 1 0 0 1-1-1v-6h4Zm0-9H5v-1a1 1 0 0 1 1-1h5Zm0-4H9.5A1.5 1.5 0 1 1 11 5.5Zm2-1.5A1.5 1.5 0 1 1 14.5 7H13ZM17 19a1 1 0 0 1-1 1h-3v-7h4Zm2-8h-6V9h5a1 1 0 0 1 1 1Z" />
+                </svg>
+              </div>
+              <div class="col-md-10">
+                <div class="card-body p-0">
+                  <h5>Daily offers</h5>
+                  <p class="card-text">We offer Daily based offres & Giveway.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock content %}
