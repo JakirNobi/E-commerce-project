@@ -729,3 +729,43 @@ h1,h2,h3,h4,h5,h6 {
 .main-logo img{
   max-width: 45%;
 }
+
+/*----------------------------------------------*/  
+.product-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.product-container {
+    flex-grow: 1;
+    min-height: 400px;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.centered-image {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+.product-info {
+    padding-left: 20px;
+    color: #333;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.striked-price {
+  text-decoration: line-through;
+}
