@@ -12,6 +12,7 @@ CATEGORY_CHOICES =(
     ('PT','Printer'),
     ('KB','Keyboard'),
     ('HP','Headphone'),
+    ('PB','Power Bank'),
 )
 
 
