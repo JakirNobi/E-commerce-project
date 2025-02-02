@@ -19,52 +19,18 @@
       </nav>
     </div>
     {% for product in products %}
-        {% if product is even %}
-            <div class="product-row">
-                <div class="product-container">
-                    <div class="image-container">
-                        <img src="{{ product.image.url }}" alt="Product Image" class="centered-image">
-                    </div>
-                    
-                    <div class="product-info">
-                        <h2>{{ product.title }}</h2>
-                        <p><span class="striked-price">TK.{{ product.selling_price}}</span></p>
-                        <p>TK.{{ product.discounted_price }}</p>
-                        <button class="btn add-to-cart">Add to Cart</button>
-                        <p>{{ product.description }}</p>
-                    </div>
-                </div>
-                
-                {% if next %}
-                    <div class="product-container">
-                        <div class="image-container">
-                            <img src="{{ next.image.url }}" alt="Product Image" class="centered-image">
-                        </div>
-                        
-                        <div class="product-info">
-                            <h2>{{ next.title }}</h2>
-                            <p><span class="striked-price">TK.{{ next.selling_price }}</span></p>
-                            <p>TK.{{ next.discounted_price }}</p>
-                            <button class="btn add-to-cart">Add to Cart</button>
-                            <p>{{ next.description }}</p>
-                        </div>
-                    </div>
-                {% endif %}
+        <div class="product-container">
+            <div class="image-container">
+                <img src="{{ product.image.url }}" alt="Product Image" class="centered-image">
             </div>
-        {% else %}
-            <div class="product-container">
-                <div class="image-container">
-                    <img src="{{ product.image.url }}" alt="Product Image" class="centered-image">
-                </div>
-                
-                <div class="product-info">
-                    <h2>{{ product.title }}</h2>
-                    <p><span class="striked-price">TK.{{ product.selling_price }}</span></p>
-                    <p>TK.{{ product.discounted_price }}</p>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                    <p>{{ product.description }}</p>
-                </div>
+            
+            <div class="product-info">
+                <h2>{{ product.title }}</h2>
+                <p><span class="striked-price">TK.{{ product.selling_price }}</span></p>
+                <p>TK.{{ product.discounted_price }}</p>
+                <button class="btn add-to-cart">Add to Cart</button>
+                <p>{{ product.description }}</p>
             </div>
-        {% endif %}
+        </div>
     {% endfor %}
 {% endblock content %}
