@@ -7,7 +7,17 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>ALL Products</h1>
+<div class="bootstrap-tabs product-tabs">
+    <div class="tabs-header d-flex justify-content-between border-bottom my-5">
+      <h2>All Products</h2>
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a href="#" class="nav-link text-uppercase fs-6 active" id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all">All</a>
+          <!-- <a href="#" class="nav-link text-uppercase fs-6" id="nav-fruits-tab" data-bs-toggle="tab" data-bs-target="#nav-fruits">In-Stock</a> -->
+          <!-- <a href="#" class="nav-link text-uppercase fs-6" id="nav-juices-tab" data-bs-toggle="tab" data-bs-target="#nav-juices">Upcomming</a> -->
+        </div>
+      </nav>
+    </div>
     {% for product in products %}
         {% if product is even %}
             <div class="product-row">
