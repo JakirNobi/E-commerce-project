@@ -10,8 +10,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'user/css/login_or_signup.css' %}">
+    <style>
+        .main-logo img {
+            max-width: 100px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
+    <div class="col-sm-4 col-lg-3 text-center text-sm-start">
+        <div class="main-logo">
+          <a href="/">
+            <img src="{% static 'base/images/stuffs_deal_logo-removebg.png' %}" alt="logo" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
     <div id="container" class="container">
         <!-- FORM SECTION -->
         <div class="row">
