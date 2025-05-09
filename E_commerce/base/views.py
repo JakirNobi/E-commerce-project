@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.views import View 
-from .models import Product
-
+from django.views.generic import ListView, DetailView
+from base.models import Product, Category
 # Create your views here.
-def home(request):
-    return render (request,"base/index.html")
+class HomeView(ListView):
+    model = Product
+    template_name = "base/index.html"
+    context_object_name = 'products'
 
 class CategoryView(View):
     def get(self,request):

@@ -144,11 +144,12 @@ All Products
                   <use xlink:href="#heart"></use>
                 </svg></a>
               <figure>
-                <a href="single-product.html" title="Product Title">
+                <a href="single-product.html" title="{{product.name}}">
                   <img src="{{ product.image.url }}" alt="Product Thumbnail" class="tab-image">
+                  
                 </a>
               </figure>
-              <h3>{{ product.title }}</h3>
+              <h3>{{ product.name  }}</h3>
               <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
                   <use xlink:href="#star-solid"></use>
               <div class="d-flex align-items-center justify-content-between">
