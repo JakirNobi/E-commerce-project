@@ -270,8 +270,8 @@
                           <use xlink:href="#heart"></use>
                         </svg></a>
                       <figure>
-                        <a href="index.html" title="{{ product.name }}">
-                          <img src="{{ product.image.url }}" class="tab-image">
+                        <a href="{{ product.get_product_url }}" title="{{ product.name }}">
+                          <img src="{{ product.image.url }}"  class="tab-image">
                         </a>
                       </figure>
                       <h3>{{ product.name }}</h3>

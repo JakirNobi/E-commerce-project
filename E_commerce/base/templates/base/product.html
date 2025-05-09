@@ -16,13 +16,13 @@
           <div class="swiper main-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="images/product-7-main.jpg" class="img-fluid" alt="A9 Pro ANC Earbuds">
+                <img src="{{ item.image.url }}" class="img-fluid" >
               </div>
               <div class="swiper-slide">
-                <img src="images/product-7-2.jpg" class="img-fluid" alt="A9 Pro ANC Earbuds">
+                <img src="{{ item.image.url }}" class="img-fluid" alt="A9 Pro ANC Earbuds">
               </div>
               <div class="swiper-slide">
-                <img src="images/product-7-3.jpg" class="img-fluid" alt="A9 Pro ANC Earbuds">
+                <img src="{{ item.image.url }}" class="img-fluid" alt="A9 Pro ANC Earbuds">
               </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -33,15 +33,15 @@
       <!-- Product Details -->
       <div class="col-md-6">
         <div class="product-details">
-          <h1 class="product-title">A9 Pro ANC Touch Screen Display Earbuds</h1>
-          
+          <h1 class="product-title">{{ item.name }}</h1>
+          <br>
           <div class="price-section mb-3">
-            <span class="current-price">৳2,499</span>
-            <span class="original-price">৳3,499</span>
-            <span class="discount-percentage">Save 29%</span>
+            <h2 class="available-price">Selling at: ৳ {{ item.selling_price }}</h2>            
+            <h4 class="off-price">Discount : ৳ {{ item.discounted_price }}</h4>
+            <br>
           </div>
 
-          <div class="ratings mb-3">
+          <!-- <div class="ratings mb-3">
             <div class="stars">
               <svg width="20" height="20" class="text-warning"><use xlink:href="#star-solid"></use></svg>
               <svg width="20" height="20" class="text-warning"><use xlink:href="#star-solid"></use></svg>
@@ -50,17 +50,11 @@
               <svg width="20" height="20" class="text-muted"><use xlink:href="#star-solid"></use></svg>
             </div>
             <span class="rating-count">(128 reviews)</span>
-          </div>
+          </div> -->
 
           <div class="specifications mb-4">
-            <h4>Specifications</h4>
-            <ul class="list-unstyled">
-              <li><strong>Model:</strong> A9 Pro</li>
-              <li><strong>Battery Life:</strong> Up to 30 hours</li>
-              <li><strong>Connectivity:</strong> Bluetooth 5.3</li>
-              <li><strong>Water Resistance:</strong> IPX5</li>
-              <li><strong>Charging Time:</strong> 2 hours</li>
-            </ul>
+            <h4>Short Description</h4>
+            <p>{{ item.preview_des }}</p>
           </div>
 
           <div class="quantity-selector mb-4">
@@ -96,14 +90,7 @@
         <div class="product-description">
           <h3>Product Description</h3>
           <div class="description-content">
-            <p>Experience premium sound quality with the A9 Pro ANC Earbuds. Features include:</p>
-            <ul>
-              <li>Active Noise Cancellation (ANC)</li>
-              <li>Touch screen controls</li>
-              <li>IPX5 water resistance</li>
-              <li>30-hour total playtime</li>
-              <li>Wireless charging case</li>
-            </ul>
+            <p>{{ item.full_description }}</p>
           </div>
         </div>
       </div>
