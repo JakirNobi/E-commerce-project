@@ -8,7 +8,12 @@ class HomeView(ListView):
     template_name = "base/index.html"
     context_object_name = 'products'
 
-class CategoryView(View):
-    def get(self,request):
-        products =Product.objects.all()
-        return render(request,"base/category.html", {"products":products})
+class CategoryView(ListView):
+    model = Product
+    template_name = "base/category.html"
+    context_object_name = 'all'
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = "base/product.html"
+    context_object_name = 'item'

@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block title %}
+  Stuffs Deal-eCommerce Platform
+{% endblock title %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Product Images -->
+      <div class="col-md-6">
+        <div class="product-images">
+          <div class="swiper main-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/product-7-main.jpg" class="img-fluid" alt="A9 Pro ANC Earbuds">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/product-7-2.jpg" class="img-fluid" alt="A9 Pro ANC Earbuds">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/product-7-3.jpg" class="img-fluid" alt="A9 Pro ANC Earbuds">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="col-md-6">
+        <div class="product-details">
+          <h1 class="product-title">A9 Pro ANC Touch Screen Display Earbuds</h1>
+          
+          <div class="price-section mb-3">
+            <span class="current-price">৳2,499</span>
+            <span class="original-price">৳3,499</span>
+            <span class="discount-percentage">Save 29%</span>
+          </div>
+
+          <div class="ratings mb-3">
+            <div class="stars">
+              <svg width="20" height="20" class="text-warning"><use xlink:href="#star-solid"></use></svg>
+              <svg width="20" height="20" class="text-warning"><use xlink:href="#star-solid"></use></svg>
+              <svg width="20" height="20" class="text-warning"><use xlink:href="#star-solid"></use></svg>
+              <svg width="20" height="20" class="text-warning"><use xlink:href="#star-solid"></use></svg>
+              <svg width="20" height="20" class="text-muted"><use xlink:href="#star-solid"></use></svg>
+            </div>
+            <span class="rating-count">(128 reviews)</span>
+          </div>
+
+          <div class="specifications mb-4">
+            <h4>Specifications</h4>
+            <ul class="list-unstyled">
+              <li><strong>Model:</strong> A9 Pro</li>
+              <li><strong>Battery Life:</strong> Up to 30 hours</li>
+              <li><strong>Connectivity:</strong> Bluetooth 5.3</li>
+              <li><strong>Water Resistance:</strong> IPX5</li>
+              <li><strong>Charging Time:</strong> 2 hours</li>
+            </ul>
+          </div>
+
+          <div class="quantity-selector mb-4">
+            <label>Quantity:</label>
+            <div class="input-group product-qty w-50">
+              <button type="button" class="quantity-left-minus btn btn-outline-secondary" data-type="minus">
+                <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
+              </button>
+              <input type="text" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+              <button type="button" class="quantity-right-plus btn btn-outline-secondary" data-type="plus">
+                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary btn-lg px-5 py-3 me-3">
+              <iconify-icon icon="uil:shopping-cart" class="me-2"></iconify-icon>
+              Add to Cart
+            </button>
+            <button class="btn btn-outline-secondary btn-lg px-5 py-3">
+              <iconify-icon icon="uil:heart" class="me-2"></iconify-icon>
+              Add to Wishlist
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Description -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="product-description">
+          <h3>Product Description</h3>
+          <div class="description-content">
+            <p>Experience premium sound quality with the A9 Pro ANC Earbuds. Features include:</p>
+            <ul>
+              <li>Active Noise Cancellation (ANC)</li>
+              <li>Touch screen controls</li>
+              <li>IPX5 water resistance</li>
+              <li>30-hour total playtime</li>
+              <li>Wireless charging case</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3>Related Products</h3>
+        <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+          <!-- Repeat product item as needed -->
+          <div class="col">
+            <div class="product-item">
+              <span class="badge bg-success position-absolute m-3">-20%</span>
+              <a href="#" class="btn-wishlist">
+                <iconify-icon icon="uil:heart"></iconify-icon>
+              </a>
+              <figure>
+                <a href="#">
+                  <img src="images/product-2.jpg" class="img-fluid" alt="Wireless Speaker">
+                </a>
+              </figure>
+              <h5>Wireless Bluetooth Speaker</h5>
+              <div class="price">৳1,799 <span class="text-muted text-decoration-line-through">৳2,199</span></div>
+              <button class="btn btn-primary w-100 mt-2">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

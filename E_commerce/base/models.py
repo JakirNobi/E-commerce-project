@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 from django.db import models
@@ -26,9 +28,19 @@ class Product(models.Model):
     is_stock = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='products')
+    slug = models.SlugField(unique=True)
 
     def __str__(self): 
         return self.name
+    
     class Meta:
         ordering =['-created']
         verbose_name_plural = 'Products'
+
+    def get_product_url(self):
+        return reverse('base:product_detail', kwargs={'slug':self.slug})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        return super().save(*args, **kwargs)
