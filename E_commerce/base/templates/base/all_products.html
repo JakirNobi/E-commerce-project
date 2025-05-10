@@ -145,11 +145,12 @@ All Products
                 </svg></a>
               <figure>
                 <a href="{{ product.get_product_url }}" title="{{product.name}}">
-                  <img src="{{ product.image.url }}" alt="Product Thumbnail" class="tab-image">
-                  
+                  <img src="{{ product.image.url }}" alt="Product Thumbnail" class="tab-image"> 
                 </a>
               </figure>
+              <a href="{{ product.get_product_url }}">
               <h3>{{ product.name  }}</h3>
+              </a>
               <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
                   <use xlink:href="#star-solid"></use>
               <div class="d-flex align-items-center justify-content-between">

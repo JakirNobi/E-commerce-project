@@ -18,12 +18,12 @@
               <div class="swiper-slide">
                 <img src="{{ item.image.url }}" class="img-fluid" >
               </div>
+              {% for product_image in product_images %}
               <div class="swiper-slide">
-                <img src="{{ item.image.url }}" class="img-fluid" alt="A9 Pro ANC Earbuds">
+                <img src="{{ product_image.image.url }}" class="img-fluid" alt="A9 Pro ANC Earbuds">
               </div>
-              <div class="swiper-slide">
-                <img src="{{ item.image.url }}" class="img-fluid" alt="A9 Pro ANC Earbuds">
-              </div>
+              {% endfor %}
+              
             </div>
             <div class="swiper-pagination"></div>
           </div>
@@ -34,6 +34,10 @@
       <div class="col-md-6">
         <div class="product-details">
           <h1 class="product-title">{{ item.name }}</h1>
+          <br>
+          <div class="category">
+            <h5>Category: {{ item.category }}</h5>
+          </div>
           <br>
           <div class="price-section mb-3">
             <h2 class="available-price">Selling at: ৳ {{ item.selling_price }}</h2>            

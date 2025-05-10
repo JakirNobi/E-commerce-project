@@ -274,12 +274,10 @@
                           <img src="{{ product.image.url }}"  class="tab-image">
                         </a>
                       </figure>
+                      <a href="{{ product.get_product_url }}">
                       <h3>{{ product.name }}</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
-                          class="text-primary">
-                          <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
+                      </a>
+                      <span class="price"> ৳{{ product.selling_price }}</span>
                       <div class="d-flex align-items-center justify-content-between">
                         <div class="input-group product-qty">
                           <span class="input-group-btn">

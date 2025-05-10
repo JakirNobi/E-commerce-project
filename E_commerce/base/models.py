@@ -44,3 +44,11 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         return super().save(*args, **kwargs)
+    
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    image = models.FileField(upload_to='product_gallery')
+    created = models.DateTimeField(auto_now_add=True)
+    def __str__(self): 
+        return str(self.product.name)
