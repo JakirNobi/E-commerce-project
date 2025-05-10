@@ -8,7 +8,7 @@ class HomeView(ListView):
     template_name = "base/index.html"
     context_object_name = 'products'
 
-class CategoryView(ListView):
+class AllProductsView(ListView):
     model = Product
     template_name = "base/all_products.html"
     context_object_name = 'all'
