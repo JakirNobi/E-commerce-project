@@ -75,10 +75,12 @@
           </div>
 
           <div class="actions">
+            <a href="{% url 'order:add-to-cart' pk=item.pk %}">
             <button class="btn btn-primary btn-lg px-5 py-3 me-3">
               <iconify-icon icon="uil:shopping-cart" class="me-2"></iconify-icon>
               Add to Cart
             </button>
+            </a>
             <button class="btn btn-outline-secondary btn-lg px-5 py-3">
               <iconify-icon icon="uil:heart" class="me-2"></iconify-icon>
               Add to Wishlist
