@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% load static %}
-
+{% load category %}
 {% block title %}
 All Products
 {% endblock title %}
@@ -42,21 +42,11 @@ All Products
           <div class="widget-product-categories pt-5">
             <h5 class="widget-title">Categories</h5>
             <ul class="product-categories sidebar-list list-unstyled">
-              <!-- <li class="cat-item">
-                <a href="/collections/categories">All</a>
-              </li>
+              {% for cat in user.request|category %}
               <li class="cat-item">
-                <a href="#" class="nav-link">Phones</a>
+                <a href="#">{{cat.name}} </a>
               </li>
-              <li class="cat-item">
-                <a href="#" class="nav-link">Accessories</a>
-              </li>
-              <li class="cat-item">
-                <a href="#" class="nav-link">Tablets</a>
-              </li>
-              <li class="cat-item">
-                <a href="#" class="nav-link">Watches</a>
-              </li> -->
+              {% endfor %}
             </ul>
           </div>
           <div class="widget-product-tags pt-3">
