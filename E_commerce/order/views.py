@@ -1,4 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
+from django.views.generic import ListView, DetailView
 from base.models import Product
 from order.models import Cart,Order
 
@@ -12,13 +13,17 @@ def add_to_cart(request,pk):
         if order.orderitems.filter(item=item).exists():
             order_item[0].quantity += 1
             order_item[0].save()
-            return redirect('base:home')
+            return redirect('order:cart')
         else:
             order.orderitems.add(order_item[0])
-            return redirect('base:home')
+            return redirect('order:cart')
     else:
         order =Order(user=request.user)
         order.save()
         order.orderitems.add(order_item[0])
-        return redirect('base:home')
- 
+        return redirect('order:cart')
+
+class CartView(ListView):
+    model = Cart
+    template_name = "order/cart.html"
+    context_object_name = 'cart_items'
