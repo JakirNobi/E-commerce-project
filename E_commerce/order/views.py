@@ -26,4 +26,3 @@ def add_to_cart(request,pk):
 class CartView(ListView):
     model = Cart
     template_name = "order/cart.html"
-    context_object_name = 'cart_items'
