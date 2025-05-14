@@ -38,12 +38,15 @@
     <body>
         <div class="profile-container">
             <div class="user-info">
-                <h2>Welcome, User!</h2>
+                <h2>Welcome, {{user.username}}</h2>
                 <p>Your account has been verified. Please ensure all information is correct.</p>
             </div>
             <form id="logoutForm" onsubmit="return confirm('Are you sure you want to log out?');">
                 <a href="{% url 'user:logout' %}">
                 <button type="button" class="logout-button">Logout</button>
+                </a>
+                <a href="{% url 'base:home' %}">
+                <button type="button" class="logout-button">Home</button>
                 </a>
             </form>
         </div>
