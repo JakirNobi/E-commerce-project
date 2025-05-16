@@ -11,18 +11,28 @@ def add_to_cart(request,pk):
     if order_qs.exists():
         order = order_qs[0]
         if order.orderitems.filter(item=item).exists():
-            order_item[0].quantity += 1
+            quantity = request.POST.get('quantity')
+            if quantity:
+                order_item[0].quantity += int(quantity)
+            else:
+                order_item[0].quantity += 1
             order_item[0].save()
             return redirect('order:cart')
         else:
+            quantity = request.POST.get('quantity', 1)
+            order_item[0].quantity = int(quantity)
+            order_item[0].save()
             order.orderitems.add(order_item[0])
             return redirect('order:cart')
     else:
-        order =Order(user=request.user)
+        order = Order(user=request.user)
         order.save()
+        quantity = request.POST.get('quantity', 1)
+        order_item[0].quantity = int(quantity)
+        order_item[0].save()
         order.orderitems.add(order_item[0])
         return redirect('order:cart')
-
+    
 class CartView(ListView):
     model = Cart
     template_name = "order/cart.html"
