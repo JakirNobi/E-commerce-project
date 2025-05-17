@@ -33,6 +33,13 @@ def add_to_cart(request,pk):
         order.orderitems.add(order_item[0])
         return redirect('order:cart')
     
-class CartView(ListView):
-    model = Cart
-    template_name = "order/cart.html"
+def cart_view(request):
+    carts = Cart.objects.filter(user=request.user,purchased=False)
+    orders = Order.objects.filter(user=request.user,ordered=False)
+    if carts.exists() and orders.exists():
+        order =orders[0]
+        context={
+            'carts': carts,
+            'order': order
+        }
+        return render(request,'base/cart.html',context)
