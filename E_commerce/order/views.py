@@ -43,3 +43,5 @@ def cart_view(request):
             'order': order
         }
         return render(request,'base/cart.html',context)
+    else:
+        return render(request,'base/cart.html')

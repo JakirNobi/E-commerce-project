@@ -13,6 +13,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+{% if not carts %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .empty-cart-message {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .home-button {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            background-color: #0db994;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #0fddb0;
+        }
+    </style>
+    <div class="empty-cart-message">
+        <h2>Your Cart Is Empty</h2>
+        <a href="/" class="home-button">Continue Shopping</a>
+    </div>
+{% else %}
     <div class="card">
         <div class="row">
             <div class="col-md-8 cart">
@@ -26,7 +72,6 @@
                 </div>
                 {% if request.user.is_authenticated %}
                     {% for cart in carts %}
-
                 <div class="row border-top border-bottom">
                     <div class="row main align-items-center">
                         <div class="col-2"><img class="img-fluid" src="{{cart.item.image.url}}"></div>
@@ -67,8 +112,8 @@
                 </div>
                 <button class="btn" id="checkout">CHECKOUT</button>
             </div>
-        </div>
-        
+        </div>      
     </div>
+{% endif %}
 </body>
 </html>
