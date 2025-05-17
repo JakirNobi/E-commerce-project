@@ -82,7 +82,7 @@
                         <div class="col">
                             <a href="#"></a><a href="#" class="border">{{cart.quantity}}</a><a href="#"></a>
                         </div>
-                        <div class="col">&euro; {{cart.get_total}} <span class="close">&#10005;</span></div>
+                        <div class="col">&euro; {{cart.get_total}} <a href="{% url 'order:remove-item' pk=cart.item.pk %}"><span class="close">&#10005;</span></div></a>
                     </div>
                 </div>
                     {% endfor %}
