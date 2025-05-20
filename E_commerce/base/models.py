@@ -8,6 +8,7 @@ class Category(models.Model):
     image = models.ImageField(upload_to='category', blank=True, null =True)
     parent = models.ForeignKey('self',related_name='children',on_delete=models.CASCADE, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(unique=True)
 
     def __str__(self): 
         return self.name
@@ -15,6 +16,14 @@ class Category(models.Model):
     class Meta:
         ordering =['-created']
         verbose_name_plural = 'Categories'
+    
+    def get_category_url(self):
+        return reverse('base:category', kwargs={'slug':self.slug})
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
 
 class Product(models.Model):

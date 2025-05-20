@@ -44,7 +44,7 @@ All Products
             <ul class="product-categories sidebar-list list-unstyled">
               {% for cat in user.request|category %}
               <li class="cat-item">
-                <a href="#">{{cat.name}} </a>
+                <a href="{{ category.get_category_url }}">{{cat.name}} </a>
               </li>
               {% endfor %}
             </ul>
