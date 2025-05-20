@@ -80,7 +80,7 @@
                             <div class="row">Cotton T-shirt</div>
                         </div>
                         <div class="col">
-                            <a href="#"></a><a href="#" class="border">{{cart.quantity}}</a><a href="#"></a>
+                            <a href="{% url 'order:increase' pk=cart.item.pk %}">+</a><a class="border">{{cart.quantity}}</a><a href="{% url 'order:decrease' pk=cart.item.pk %}">-</a>
                         </div>
                         <div class="col">&euro; {{cart.get_total}} <a href="{% url 'order:remove-item' pk=cart.item.pk %}"><span class="close">&#10005;</span></div></a>
                     </div>
