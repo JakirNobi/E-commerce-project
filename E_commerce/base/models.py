@@ -17,8 +17,6 @@ class Category(models.Model):
         ordering =['created'] #['-created] for newest first
         verbose_name_plural = 'Categories'
     
-    def get_category_url(self):
-        return reverse('base:category_detail', kwargs={'slug':self.slug})
     
     def save(self, *args, **kwargs):
         if not self.slug:
