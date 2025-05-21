@@ -1,10 +1,10 @@
 from django import template
 from base.models import Category
+from django.db.models import Count
 
 register = template.Library()
 
-@register.filter
-
-def category(user):
-        cat = Category.objects.all()
-        return cat
+@register.inclusion_tag('base/includes/category_list.html')
+def show_categories():
+    categories = Category.objects.annotate(product_count=Count('category'))
+    return {'categories': categories}
