@@ -207,7 +207,7 @@
                 <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 
                   <!-- Product-1 -->
-                   {% for product in products %}
+                   {% for product in products|slice:":10" %}
                    <form method="post" action="{% url 'order:add-to-cart' pk=product.pk %}">
                     {% csrf_token %}
                   <div class="col">
