@@ -168,67 +168,12 @@
 
           <div class="category-carousel swiper">
             <div class="swiper-wrapper">
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon1.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Earbuds</h3>
+              {% for category in categories %}
+              <a href="{% url 'base:products_by_category' category.slug %}" class="nav-link category-item swiper-slide">
+                <img src="{{category.image.url}}" alt="Category Thumbnail">
+                <h3 class="category-title">{{category.name}}</h3>
               </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon2.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Smart watch</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon3.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Mouse</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon4.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Sound Box</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon5.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Router</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon6.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Stand Fan</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon7.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Printer</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon8.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Mic</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon9.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Keybord</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon10.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Head-Phone</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon11.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Gamepad</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon12.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Flashlight</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon13.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">USB</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon14.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">AC</h3>
-              </a>
-              <a href="index.html" class="nav-link category-item swiper-slide">
-                <img src="{% static 'base/images/icons/icon15.png' %}" alt="Category Thumbnail">
-                <h3 class="category-title">Camera</h3>
-              </a>
-
+              {% endfor %}
             </div>
           </div>
 

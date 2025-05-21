@@ -42,9 +42,9 @@ All Products
           <div class="widget-product-categories pt-5">
             <h5 class="widget-title">Categories</h5>
             <ul class="product-categories sidebar-list list-unstyled">
-              {% for cat in user.request|category %}
+              {% for category in categories %}
               <li class="cat-item">
-                <a href="{{ category.get_category_url }}">{{cat.name}} </a>
+                <a href="{% url 'base:products_by_category' category.slug %}">{{category.name}} </a>
               </li>
               {% endfor %}
             </ul>

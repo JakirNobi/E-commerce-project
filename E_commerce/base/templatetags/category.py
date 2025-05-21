@@ -6,5 +6,5 @@ register = template.Library()
 @register.filter
 
 def category(user):
-        cat = Category.objects.filter(parent=None)
+        cat = Category.objects.all()
         return cat
