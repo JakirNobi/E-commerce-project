@@ -1,14 +1,18 @@
-# Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
+# Create your views here.
 
 def login_signup_view(request):
     if  request.user.is_authenticated:
-        return render(request,'user/profile.html')  # Redirect to home page after login
+        return render(request,'user/profile.html')  # Redirect to profile page after login
     else:
         if request.method == 'POST':
             # Handle Login
@@ -49,3 +53,4 @@ def login_signup_view(request):
 def logout_view(request):
     logout(request)
     return redirect('user:login_signup')
+

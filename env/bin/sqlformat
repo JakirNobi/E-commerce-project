@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/run/media/pranto/New Volume/code/pp1/env/bin/python" "$0" "$@"
-' '''
+#!/mnt/pranto/code/pp1/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
