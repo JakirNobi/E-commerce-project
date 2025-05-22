@@ -9,25 +9,30 @@ function change() {
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="form-group">
+                    <div class="border-effect"></div>
                     <label for="fullName">Full Name</label>
+                    
                     <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="form-group">
                     <label for="eMail">Email</label>
+                    <div class="border-effect"></div>
                     <input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="form-group">
                     <label for="phone">Phone</label>
+                    <div class="border-effect"></div>
                     <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="form-group">
                     <label for="website">Website URL</label>
+                    <div class="border-effect"></div>
                     <input type="url" class="form-control" id="website" placeholder="Website url">
                 </div>
             </div>
@@ -39,24 +44,28 @@ function change() {
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="form-group">
                     <label for="Street">Street</label>
+                    <div class="border-effect"></div>
                     <input type="text" class="form-control" id="Street" placeholder="Enter Street">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="form-group">
                     <label for="ciTy">City</label>
+                    <div class="border-effect"></div>
                     <input type="text" class="form-control" id="ciTy" placeholder="Enter City">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="form-group">
                     <label for="sTate">State</label>
+                    <div class="border-effect"></div>
                     <input type="text" class="form-control" id="sTate" placeholder="Enter State">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="form-group">
                     <label for="zIp">Zip Code</label>
+                    <div class="border-effect"></div>
                     <input type="text" class="form-control" id="zIp" placeholder="Zip Code">
                 </div>
             </div>
@@ -82,12 +91,12 @@ function cancel() {
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
-                                    <p>Full Name : </p>
+                                    <p>Full Name : {{user.username}}</p>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
-                                    <p>Email : </p>
+                                    <p>Email : {{user.email}}</p>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

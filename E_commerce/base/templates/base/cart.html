@@ -56,7 +56,7 @@
     </style>
     <div class="empty-cart-message">
         <h2>Your Cart Is Empty</h2>
-        <a href="/" class="home-button">Continue Shopping</a>
+        <a href="{% url 'base:all_products' %}" class="home-button">Continue Shopping</a>
     </div>
 {% else %}
     <div class="card">
