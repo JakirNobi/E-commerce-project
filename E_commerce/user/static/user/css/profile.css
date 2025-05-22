@@ -7,7 +7,7 @@ body {
     height: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-    background-image: url('8bit.jpeg');
+    /* background-image: url('8bit.jpeg'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@ body {
 }
 .form-group p,
 .form-group label{
-    color: #F5E8D8;
+    color: #cb8d41;
 }
 
 .border-effect {

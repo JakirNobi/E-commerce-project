@@ -180,7 +180,17 @@
 
           <!-- user_icon -->
           <ul class="d-flex justify-content-end list-unstyled m-0">
+            {% if request.user.is_authenticated %}
             <li>
+              <a href="{% url 'user:profile' %}" class="rounded-circle bg-light p-2 mx-1">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#user"></use>
+                </svg>
+              </a>
+              <p>{{ user.username }}</p>
+            </li>
+              {% else %}
+              <li>
               <a href="{% url 'user:login_signup' %}" class="rounded-circle bg-light p-2 mx-1">
                 <svg width="24" height="24" viewBox="0 0 24 24">
                   <use xlink:href="#user"></use>
@@ -188,7 +198,9 @@
               </a>
               <p>{{ user.username }}</p>
             </li>
+            {% endif %}
           </ul>
+          
 
         </div>
 
