@@ -1,9 +1,11 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from django.views.generic import ListView, DetailView
+# from django.views.generic import ListView, DetailView
 from base.models import Product
 from order.models import Cart,Order
-
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 # Create your views here.
+@login_required
 def add_to_cart(request,pk):
     item = get_object_or_404(Product,pk=pk)
     order_item = Cart.objects.get_or_create(item=item,user=request.user,purchased=False)
@@ -32,7 +34,7 @@ def add_to_cart(request,pk):
         order_item[0].save()
         order.orderitems.add(order_item[0])
         return redirect('order:cart')
-    
+@login_required   
 def cart_view(request):
     carts = Cart.objects.filter(user=request.user,purchased=False)
     orders = Order.objects.filter(user=request.user,ordered=False)
@@ -45,7 +47,7 @@ def cart_view(request):
         return render(request,'base/cart.html',context)
     else:
         return render(request,'base/cart.html')
-
+@login_required
 def remove_item_from_cart(request, pk):
     item = get_object_or_404(Product,pk = pk)
     orders = Order.objects.filter(user=request.user,ordered =False)
@@ -60,7 +62,7 @@ def remove_item_from_cart(request, pk):
             return redirect('order:cart')
     else:
         return redirect('order:cart')
-    
+@login_required
 def increase_cart(request,pk):
     item = get_object_or_404(Product, pk=pk)
     order_qs = Order.objects.filter(user=request.user,ordered=False)
@@ -76,7 +78,7 @@ def increase_cart(request,pk):
             return redirect('base:home')
     else:
         return redirect('base:home')
-    
+@login_required
 def decrease_cart(request,pk):
     item = get_object_or_404(Product,pk=pk)
     order_qs = Order.objects.filter(user=request.user,ordered=False)
