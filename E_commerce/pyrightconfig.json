@@ -1,0 +1,20 @@
+{
+  "typeCheckingMode": "basic",
+  "reportGeneralTypeIssues": false,
+  "reportOptionalMemberAccess": false,
+  "reportOptionalSubscript": false,
+  "reportPrivateUsage": false,
+  "reportUnknownArgumentType": false,
+  "reportUnknownMemberType": false,
+  "reportUnknownVariableType": false,
+  "ignore": [
+    "**/migrations/**",  // Ignore Django migration files
+    "**/tests/**"        // Ignore test files
+  ],
+  "disable": [
+    // Disable specific error codes
+    "reportAttributeAccessIssue",    // For OneToOneField attribute access
+    "reportUnusedVariable",         // For unused kwargs warning
+    "reportUnusedExpression"       // For other unused expression warnings
+  ]
+}
