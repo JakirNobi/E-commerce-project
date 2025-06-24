@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-{% if not carts %}
     <style>
         body {
             margin: 0;
@@ -54,6 +53,7 @@
             background-color: #0fddb0;
         }
     </style>
+{% if not carts %}
     <div class="empty-cart-message">
         <h2>Your Cart Is Empty</h2>
         <a href="{% url 'base:all_products' %}" class="home-button">Continue Shopping</a>
@@ -110,7 +110,7 @@
                     <div class="col text-right">&euro; {{order.get_totals}} </div>
                     {% endif %}
                 </div>
-                <button class="btn" id="checkout">CHECKOUT</button>
+                <a href = "{% url 'payment:checkout' %}" class="home-button">Checkout</a>
             </div>
         </div>      
     </div>
