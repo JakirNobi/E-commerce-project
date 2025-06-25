@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
+# from django.http import HttpResponseRedirect
 from .models import BillingAddress
 from .forms import BillingAddressForm
-from order.models import Cart,Order
+# from order.models import Cart,Order
 from django.views.generic import TemplateView
 
 
