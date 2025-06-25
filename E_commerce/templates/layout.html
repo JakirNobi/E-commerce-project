@@ -149,8 +149,8 @@
             <!-- Categories_Selector -->
             <div class="col-md-4 d-none d-md-block">
               <select class="form-select border-0 bg-transparent">
-                {% for category in categories %}
-                <option><a href="{% url 'base:products_by_category' category.slug %}">{{category.name}}</a></option>
+                {% for cat in request.user|category %}
+                <option><a href="#">{{cat.name}}</a></option>
                {% endfor %}
               </select>
             </div>

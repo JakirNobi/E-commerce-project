@@ -20,5 +20,14 @@ class CheckoutTemplateView(TemplateView):
         return render(request, 'payment/checkout.html',context)
 
 
-    # def post(self, request, *args, **kwargs):
-    #     pass
+    def post(self, request, *args, **kwargs):
+        saved_address = BillingAddress.objects.get_or_create(user = request.user or None)
+        saved_address = saved_address[0]
+        form = BillingAddressForm(instance = saved_address)
+        if request.method == 'post' or request.method =='POST':
+            form = BillingAddressForm(request.POST,instance=saved_address)
+            if form.is_valid():
+                form.save()
+                return redirect('base:home')
+
+
