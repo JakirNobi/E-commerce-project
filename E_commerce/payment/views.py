@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 # from django.http import HttpResponseRedirect
 from .models import BillingAddress
 from .forms import BillingAddressForm
-# from order.models import Cart,Order
+from order.models import Cart,Order
 from django.views.generic import TemplateView
 
 
@@ -24,10 +24,19 @@ class CheckoutTemplateView(TemplateView):
         saved_address = BillingAddress.objects.get_or_create(user = request.user or None)
         saved_address = saved_address[0]
         form = BillingAddressForm(instance = saved_address)
+        carts = Cart.objects.filter(user=request.user,purchased=False)
+        orders = Order.objects.filter(user=request.user,ordered=False)
+        if carts.exists() and orders.exists():
+            order =orders[0]
+        context={
+            'carts': carts,
+            'order': order
+        }
+
         if request.method == 'post' or request.method =='POST':
             form = BillingAddressForm(request.POST,instance=saved_address)
             if form.is_valid():
                 form.save()
-                return redirect('base:home')
+                return render(request,'payment/payment_opts.html',context)
 
 
