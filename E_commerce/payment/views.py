@@ -39,4 +39,27 @@ class CheckoutTemplateView(TemplateView):
                 form.save()
                 return render(request,'payment/payment_opts.html',context)
 
+def cash_on_delivery(request):
+    saved_address = BillingAddress.objects.get_or_create(user = request.user or None)
+    saved_address = saved_address[0]
+    
+    if not saved_address.is_fully_filled():
+        return redirect('payment:checkout')
+    
+    else:
+        order_qs = Order.objects.filter(user=request.user, ordered=False)
+        order = order_qs[0]
+        order.ordered = True
+        order.orderId = order.id
+        order.paymentId = 'Cash on Delivery'
+        order.save()
+        cart_items = Cart.objects.filter(user=request.user, purchased=False)
+        for item in cart_items:
+            item.purchased = True
+            item.save()
+
+        return redirect('base:home')
+    
+
+
 
