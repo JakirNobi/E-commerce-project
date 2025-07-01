@@ -139,3 +139,7 @@ LOGOUT_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STORE_ID = 'stuff685fece204f18'
+STORE_PASS = 'stuff685fece204f18@ssl'
+
