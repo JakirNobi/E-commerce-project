@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from django.views import View
+# from django.shortcuts import render
+# from django.views import View
 from django.views.generic import ListView, DetailView
 from base.models import Product, Category, ProductImage
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+# from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import get_object_or_404
-from django.db.models import Count
+# from django.db.models import Count
 
 
 # Create your views here.
