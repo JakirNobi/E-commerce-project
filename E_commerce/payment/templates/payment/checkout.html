@@ -17,7 +17,9 @@
                 {{ billing_address.as_p }} 
                
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">Save Address</button>
+                    <a><button type="submit" class="btn btn-primary btn-lg">Save Address</button></a>
+                    <a href = "{% url 'payment:payment_opts' %}" ><button type="button" class="btn btn-primary btn-lg">To Payment</button></a>
+
                 </div>
             </form>
         </div>
