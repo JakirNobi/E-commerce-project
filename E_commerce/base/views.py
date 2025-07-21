@@ -48,3 +48,22 @@ class ProductDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context["product_images"] = ProductImage.objects.filter(product=self.object.id)
         return context
+
+
+class SearchView(ListView):
+    model = Product
+    template_name = "base/search.html"
+    context_object_name = "products"
+    paginate_by = 8
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        if query:
+            return Product.objects.filter(name__icontains=query) | Product.objects.filter(full_description__icontains=query)
+        return Product.objects.none()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["categories"] = Category.objects.all()
+        context["query"] = self.request.GET.get("q", "")
+        return context

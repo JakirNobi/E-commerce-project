@@ -15,4 +15,5 @@ urlpatterns = [
     path(
         "product/<slug:slug>/", views.ProductDetailView.as_view(), name="product_detail"
     ),
+    path("search/", views.SearchView.as_view(), name="search"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

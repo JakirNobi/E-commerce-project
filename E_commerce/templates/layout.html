@@ -158,9 +158,9 @@
 
             <!-- Search_bar -->
             <div class="col-11 col-md-7">
-              <form id="search-form" class="text-center" action="index.html" method="post">
+              <form id="search-form" class="text-center" action="{% url 'base:search' %}" method="get">
                 <input type="text" class="form-control border-0 bg-transparent"
-                  placeholder="Search for more than 20,000 products" />
+                  placeholder="Search for more than 20,000 products" name="q" />
               </form>
             </div>
 
