@@ -1,3 +1,7 @@
 asgiref==3.8.1
 Django==5.1.5
 sqlparse==0.5.3
+python-dotenv==0.21.0
+langchain-community==0.0.20
+langchain-experimental==0.0.52
+langchain==0.1.4

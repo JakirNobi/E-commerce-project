@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'user',
     'order',
     'payment',
+    'chatbot',
 ]
 
 MIDDLEWARE = [

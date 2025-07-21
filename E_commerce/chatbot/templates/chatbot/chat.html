@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #home-button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        #home-button:hover {
+            background-color: #0056b3;
+        }
+        #chat-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        #chat-history {
+            flex-grow: 1;
+            height: 400px; /* Increased height for better viewing */
+            overflow-y: auto;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            background-color: #e9ecef;
+        }
+        #chat-history p {
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        #chat-history p:nth-child(odd) { /* User messages */
+            background-color: #d4edda; /* Light green */
+            align-self: flex-end;
+            margin-left: auto;
+            text-align: right;
+        }
+        #chat-history p:nth-child(even) { /* Bot messages */
+            background-color: #cce5ff; /* Light blue */
+            align-self: flex-start;
+            margin-right: auto;
+            text-align: left;
+        }
+        #chat-form {
+            display: flex;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        #user-input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 1px solid #ced4da;
+            border-radius: 25px;
+            margin-right: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        #user-input:focus {
+            border-color: #007bff;
+        }
+        #chat-form button {
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        #chat-form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" id="home-button">Home</a>
+    <div id="chat-container">
+        <div id="chat-history">
+            {% if user.is_authenticated %}
+                {% for message in chat_history %}
+                    <p>{% if message.is_user_message %}{{ message.user.username }}{% else %}Qwen{% endif %}: {{ message.message }}</p>
+                {% endfor %}
+            {% else %}
+                <p>Please <a href="{% url 'login' %}">login</a> to use the chatbot.</p>
+            {% endif %}
+        </div>
+        {% if user.is_authenticated %}
+            <form id="chat-form">
+                {% csrf_token %}
+                <input type="text" id="user-input" name="user_input" placeholder="Type your message...">
+                <button type="submit">Send</button>
+            </form>
+        {% endif %}
+    </div>
+
+    {% if user.is_authenticated %}
+    <script>
+        const chatHistory = document.getElementById('chat-history');
+        const chatForm = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userInputValue = userInput.value;
+            userInput.value = '';
+
+            // Add user message to chat history
+            const userMessage = document.createElement('p');
+            userMessage.textContent = `You: ${userInputValue}`;
+            chatHistory.appendChild(userMessage);
+
+            // Send user input to the server
+            const response = await fetch('/chatbot/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: `user_input=${userInputValue}`
+            });
+
+            const data = await response.json();
+
+            // Add bot response to chat history
+            const botMessage = document.createElement('p');
+            botMessage.textContent = `Qwen: ${data.response}`;
+            chatHistory.appendChild(botMessage);
+
+            // Scroll to the bottom of the chat history
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        });
+    </script>
+    {% endif %}
+</body>
+</html>
