@@ -31,7 +31,7 @@ Answer: "Final answer here"
 Only use the following tables:
 {table_info}
 
-If the user asks about a product, first consider if they might be referring to a category with the same name. If a product name is ambiguous (e.g., 'mouse' could be a product or a category), try to search for it as a category first, then as a product if no category is found. If the user asks for the price of a product, make sure to query the `current_price` column. Always provide a clear, concise final answer to the user.
+If the user asks about a product, first consider if they might be referring to a category with the same name. If a product name is ambiguous (e.g., 'mouse' could be a product or a category), try to search for it as a category first, then as a product if no category is found. If the user asks for the price of a product, make sure to query the `selling_price` column. Always provide a clear, concise final answer to the user.
 
 If the user asks for information that is not related to products, categories, or general greetings, or if they ask for sensitive information such as user details, passwords, or other private data, respond with: "Hey, I am only here to help you with your shopping."
 
