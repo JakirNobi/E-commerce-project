@@ -1,30 +1,35 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render
+from django.conf import settings
 from langchain.prompts import PromptTemplate
 from langchain_community.utilities import SQLDatabase
 from langchain_experimental.sql import SQLDatabaseChain
-from langchain_ollama import ChatOllama
+from langchain_openai import ChatOpenAI
+import os
+import logging
 
 from .models import ChatHistory
 
-# Initialize the LLM
-llm = ChatOllama(model="qwen2.5-coder:1.5b")
+# Set up logging
+logger = logging.getLogger(__name__)
+
+# Initialize the LLM with OpenRouter and Qwen3 model in chat mode
+llm = ChatOpenAI(
+    model="qwen/qwen3-235b-a22b:free",  # Using Qwen3 235B A22B free model
+    openai_api_key=os.getenv("OPENROUTER_API_KEY"),
+    openai_api_base="https://openrouter.ai/api/v1",
+    temperature=0.7,
+)
 
 db = SQLDatabase.from_uri("sqlite:///db.sqlite3")
 
-# Define a custom prompt template
+# Define a custom prompt template optimized for chat mode
 custom_prompt = PromptTemplate.from_template(
     """
-Given an input question, first create a syntactically correct {dialect} query to run, then look at the results of the query and return the answer.
-Unless the user specifies in the question a specific number of examples to obtain, query for at most {top_k} results using the LIMIT clause as per {dialect}.
-You can order the results by a relevant column to return the most interesting examples in the database.
-Never query for all columns from a table. You must query only the columns that are needed to answer the question.
-Pay attention to use only the column names you can see in the tables below. Be careful to not query for columns that do not exist.
-Also, pay attention to which column is in which table.
+You are a helpful shopping assistant. You provide direct, concise answers about products and categories in our store. You don't need to explain your reasoning or show your work unless specifically asked.
 
 Use the following format:
-
 Question: "Question here"
 SQLQuery: "SQL Query to run"
 SQLResult: "Result of the SQLQuery"
@@ -33,7 +38,7 @@ Answer: "Final answer here"
 Only use the following tables:
 {table_info}
 
-If the user asks about a product, first consider if they might be referring to a category with the same name. If a product name is ambiguous (e.g., 'mouse' could be a product or a category), try to search for it as a category first, then as a product if no category is found. If the user asks for the price of a product, make sure to query the `selling_price` column. Always provide a clear, concise final answer to the user.
+If the user asks about a product, first consider if they might be referring to a category with the same name. If a product name is ambiguous (e.g., 'mouse' could be a product or a category), try to search for it as a category first, then as a product if no category is found. If the user asks for the price of a product, make sure to query the `selling_price` column.
 
 If the user asks for information that is not related to products, categories, or general greetings, or if they ask for sensitive information such as user details, passwords, or other private data, respond with: "Hey, I am only here to help you with your shopping."
 
@@ -42,7 +47,7 @@ Question: {input}
 )
 
 db_chain = SQLDatabaseChain.from_llm(
-    llm, db, prompt=custom_prompt, verbose=True
+    llm, db, prompt=custom_prompt, verbose=True, return_sql=True
 )
 
 
@@ -86,7 +91,16 @@ def chat(request):
             try:
                 response = db_chain.run(user_input)
             except Exception as e:
-                response = f"An error occurred: {e}"
+                # Log the error for debugging
+                logger.error(f"Error in chatbot: {str(e)}")
+                
+                # Handle specific OpenRouter API errors
+                if "rate limit" in str(e).lower():
+                    response = "I'm experiencing high demand right now. Please wait a moment and try again."
+                elif "unauthorized" in str(e).lower() or "api key" in str(e).lower():
+                    response = "I'm having trouble connecting to my brain. Please contact support."
+                else:
+                    response = "I encountered an issue processing your request. Please try rephrasing or ask another question."
 
         # Save bot response to history
         ChatHistory.objects.create(
